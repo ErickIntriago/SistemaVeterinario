@@ -1,0 +1,75 @@
+/* Menú superior */
+
+.menu{
+
+    height:70px;
+    
+
+    background:#198754;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 30px;
+
+    color:white;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+
+}
+
+
+/* Logo */
+
+.logo{
+
+    font-size:20px;
+    color: rgb(239, 243, 243);
+    font-weight:bold;
+
+}
+
+
+/* Menú */
+
+nav{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+
+nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+nav a:hover{
+
+    color:#ffd54f;
+
+}
+
+
+/* Contenido */
+
+.contenido{
+
+    padding:30px;
+
+}

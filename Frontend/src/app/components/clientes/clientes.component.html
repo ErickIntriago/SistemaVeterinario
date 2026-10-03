@@ -1,0 +1,122 @@
+
+<div class="container">
+
+
+    <!-- FORMULARIO CLIENTE -->
+    <div class="formulario-container">
+
+        <div class="formulario">
+
+
+            <input 
+            type="text"
+            placeholder="Cédula"
+            [(ngModel)]="cliente.cedula">
+
+
+            <input 
+            type="text"
+            placeholder="Nombre"
+            [(ngModel)]="cliente.nombre">
+
+
+            <input 
+            type="text"
+            placeholder="Apellido"
+            [(ngModel)]="cliente.apellido">
+
+
+            <input 
+            type="text"
+            placeholder="Teléfono"
+            [(ngModel)]="cliente.telefono">
+
+
+            <input 
+            type="text"
+            placeholder="Dirección"
+            [(ngModel)]="cliente.direccion">
+
+
+            <input 
+            type="email"
+            placeholder="Correo"
+            [(ngModel)]="cliente.correo">
+
+
+            <button (click)="guardarCliente()">
+
+                Guardar Cliente
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- IMAGEN VETERINARIA -->
+
+    <div class="contenedor-imagen">
+
+       <img src="/Img.png" alt="Veterinaria">
+
+    </div>
+
+
+</div>
+
+
+
+<!-- TABLA CLIENTES -->
+
+<div class="tabla">
+
+
+
+
+<table>
+
+
+<tr>
+
+<th>ID</th>
+<th>Cédula</th>
+<th>Nombre</th>
+<th>Apellido</th>
+<th>Teléfono</th>
+<th>Direccion</th>
+<th>Correo</th>
+
+</tr>
+
+
+
+<tr *ngFor="let c of clientes">
+
+
+<td>{{c.id_cliente}}</td>
+
+<td>{{c.cedula}}</td>
+
+<td>{{c.nombre}}</td>
+
+<td>{{c.apellido}}</td>
+
+<td>{{c.telefono}}</td>
+<td>{{c.direccion}}</td>
+
+<td>{{c.correo}}</td>
+
+
+</tr>
+
+
+</table>
+
+
+</div>
