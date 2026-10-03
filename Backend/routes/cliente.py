@@ -18,7 +18,7 @@ def listar_clientes():
     cursor = conexion.cursor()
 
 
-    cursor.execute(""" SELECT id_cliente,cedula,nombre,apellido,telefono,direccion,correo FROM Cliente """)
+    cursor.execute(""" SELECT id_cliente,cedula,nombre,apellido,telefono,direccion,correo FROM Cliente  """)
     clientes=[]
     for fila in cursor.fetchall():
         clientes.append({
@@ -36,7 +36,7 @@ def listar_clientes():
     conexion.close()
     return clientes
 
-
+# RUTAS PARA INSERTAR CLIENTES 
 @router.post("/")
 def insertar_cliente(cliente:Cliente):
     try: 
