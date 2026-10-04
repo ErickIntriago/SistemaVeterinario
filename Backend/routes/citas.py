@@ -1,46 +1,48 @@
 from fastapi import APIRouter
 from database import get_conexion
-from models.recetas import Receta
+from models.citas import Cita
 
 
 
 router= APIRouter(
-    prefix="/recetas",
-    tags=["Recetas"]
+    prefix="/citas",
+    tags=["Citas"]
 )
 
 
 @router.get("/")
-def listar_recetas():   
+def listar_citas():
 
     conexion = get_conexion()
     cursor = conexion.cursor()
 
 
-    cursor.execute(""" SELECT id_receta,fecha,indicaciones,medicamento,id_historia FROM Receta  """)
-    recetas=[]
+    cursor.execute(""" SELECT id_cita,fecha,motivo,estado,id_mascota,id_veterinario FROM Cita  """)
+    citas=[]
     for fila in cursor.fetchall():
-        recetas.append({
+        citas.append({
 
-            "id_receta": fila[0],
+            "id_cita": fila[0],
             "fecha": fila[1],
-            "indicaciones": fila[2],
-            "medicamento": fila[3],
-            "id_historia": fila[4]
+            "motivo": fila[2],
+            "estado": fila[3],
+            "id_mascota": fila[4],
+            "id_veterinario": fila[5]
         })
     cursor.close()
     conexion.close()
-    return recetas
+    return citas
+
 
 @router.post("/")
-def insertar_receta(receta:Receta): 
+def insertar_cita(cita:Cita):
     try: 
             
             conexionBD = get_conexion()
             cursor = conexionBD.cursor()
             
-            cursor.execute(""" INSERT INTO Receta (fecha,indicaciones,medicamento,id_historia )VALUES(?,?,?,?)""", 
-                           receta.fecha, receta.indicaciones, receta.medicamento, receta.id_historia)
+            cursor.execute(""" INSERT INTO Cita (fecha,motivo,estado,id_mascota,id_veterinario )VALUES(?,?,?,?,?)""", 
+                           cita.fecha, cita.motivo, cita.estado, cita.id_mascota, cita.id_veterinario)
             
             conexionBD.commit()
             cursor.close()
@@ -49,15 +51,15 @@ def insertar_receta(receta:Receta):
             return {"Registro insertado correctamente"}
     
     except Exception as e:
-     return {"error": str(e)}   
+     return {"error": str(e)}
  
-@router.put("/{id}")                   
-def actualizar_receta(id: int, receta:Receta):
+@router.put("/{id}")
+def actualizar_cita(id: int, cita:Cita):
     try:
        conexionBD=get_conexion()
        cursor=conexionBD.cursor()
-       cursor.execute("""UPDATE Receta SET fecha=?, indicaciones=?, medicamento=?, id_historia=? WHERE id_receta=?""",
-            receta.fecha, receta.indicaciones, receta.medicamento, receta.id_historia, id)
+       cursor.execute("""UPDATE Cita SET fecha=?, motivo=?, estado=?, id_mascota=?, id_veterinario=? WHERE id_cita=?""",
+            cita.fecha, cita.motivo, cita.estado, cita.id_mascota, cita.id_veterinario, id)
        
        conexionBD.commit()
        cursor.close()
@@ -70,11 +72,11 @@ def actualizar_receta(id: int, receta:Receta):
  
  
 @router.delete("/{id}")
-def eliminar_receta(id: int):
+def eliminar_cita(id: int):
     try:
        conexionBD=get_conexion()
        cursor=conexionBD.cursor()
-       cursor.execute("""DELETE FROM Receta WHERE id_receta=?""", (id,))
+       cursor.execute("""DELETE FROM Cita WHERE id_cita=?""", (id,))
        
        conexionBD.commit()
        cursor.close()
@@ -84,3 +86,4 @@ def eliminar_receta(id: int):
     
     except Exception as e:
      return {"error": str(e)}
+ 
