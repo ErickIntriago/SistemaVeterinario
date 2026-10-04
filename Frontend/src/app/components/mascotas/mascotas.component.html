@@ -1,1 +1,82 @@
-<p>mascotas works!</p>
+<div class="container">
+
+```
+<!-- FORMULARIO MASCOTA -->
+<div class="formulario-container">
+
+    <div class="formulario">
+
+        <input
+            type="text"
+            placeholder="Nombre"
+            [(ngModel)]="mascota.nombre">
+
+        <input
+            type="text"
+            placeholder="Raza"
+            [(ngModel)]="mascota.raza">
+
+        <input
+            type="text"
+            placeholder="Sexo"
+            [(ngModel)]="mascota.sexo">
+
+        <input
+            type="date"
+            placeholder="Fecha de Nacimiento"
+            [(ngModel)]="mascota.fecha_nacimiento">
+
+        <input
+            type="text"
+            placeholder="Id_Cliente"
+            [(ngModel)]="mascota.id_cliente">
+
+        <button (click)="guardarMascota()">
+            Guardar Mascota
+        </button>
+
+    </div>
+
+</div>
+
+<!-- IMAGEN VETERINARIA -->
+<div class="contenedor-imagen">
+
+    <img src="/Img.png" alt="Veterinaria">
+
+</div>
+```
+
+</div>
+
+<!-- TABLA MASCOTAS -->
+
+<div class="tabla">
+
+```
+<table>
+
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Raza</th>
+        <th>Sexo</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Id_Cliente</th>
+    </tr>
+
+    <tr *ngFor="let c of mascotas">
+
+        <td>{{c.id_mascota}}</td>
+        <td>{{c.nombre}}</td>
+        <td>{{c.raza}}</td>
+        <td>{{c.sexo}}</td>
+        <td>{{c.fecha_nacimiento}}</td>
+        <td>{{c.id_cliente}}</td>
+
+    </tr>
+
+</table>
+
+
+</div>

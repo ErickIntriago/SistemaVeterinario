@@ -1,1 +1,117 @@
-<p>citas works!</p>
+
+<div class="container">
+
+
+
+    <!-- FORMULARIO CLIENTE -->
+    <div class="formulario-container">
+
+        <div class="formulario">
+
+
+            <input 
+            type="text"
+            placeholder="Fecha"
+            [(ngModel)]="cita.fecha">
+
+
+            <input 
+            type="text"
+            placeholder="Motivo"
+            [(ngModel)]="cita.motivo">
+
+
+            <input 
+            type="text"
+            placeholder="Estado"
+            [(ngModel)]="cita.estado">
+
+
+            <input 
+            type="text"
+            placeholder="Id_Mascota"
+            [(ngModel)]="cita.id_mascota">
+
+
+            <input 
+            type="text"
+            placeholder="Id_Veterinario"
+            [(ngModel)]="cita.id_veterinario">
+
+
+
+            <button (click)="guardarCita()">
+
+                Guardar Cita
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- IMAGEN VETERINARIA -->
+
+    <div class="contenedor-imagen">
+
+       <img src="/Img.png" alt="Veterinaria">
+
+    </div>
+
+
+</div>
+
+
+
+<!-- TABLA CLIENTES -->
+
+<div class="tabla">
+
+
+
+
+<table>
+
+
+<tr>
+
+<th>ID</th>
+<th>Fecha</th>
+<th>Motivo</th>
+<th>Estado</th>
+<th>Id_Mascota</th>
+<th>Id_Veterinario</th>
+
+</tr>
+
+
+
+<tr *ngFor="let c of citas">
+
+
+<td>{{c.id_cita}}</td>
+
+<td>{{c.fecha}}</td>
+
+<td>{{c.motivo}}</td>
+
+<td>{{c.estado}}</td>
+
+<td>{{c.id_mascota}}</td>
+<td>{{c.id_veterinario}}</td>
+
+
+
+
+</tr>
+
+
+</table>
+
+
+</div>

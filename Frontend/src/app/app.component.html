@@ -1,29 +1,21 @@
 <header class="menu">
 
-    <div class="logo">
-        🐾 Sistema Veterinario
-    </div>
+  <div class="logo">
+    🐾 Sistema Veterinario
+  </div>
 
-    <nav>
-
-        <a href="#">Clientes</a>
-
-        <a href="#">Mascotas</a>
-
-        <a href="#">Veterinarios</a>
-
-        <a href="#">Recetas</a>
-
-        <a href="#">Citas</a>
-
-        <a href="#">Facturas</a>
-
-    </nav>
+  <nav>
+    <a routerLink="/clientes">Clientes</a>
+    <a routerLink="/mascotas">Mascotas</a>
+    <a routerLink="/veterinarios">Veterinarios</a>
+    <a routerLink="/recetas">Recetas</a>
+    <a routerLink="/citas">Citas</a>
+  </nav>
 
 </header>
 
 <div class="contenido">
 
-    <app-clientes></app-clientes>
+  <router-outlet></router-outlet>
 
 </div>
