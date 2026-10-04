@@ -13,7 +13,7 @@
 
     align-items:center;
 
-    padding:0 30px;
+    padding: 0 60px;
 
     color:white;
 
@@ -73,3 +73,17 @@ nav a:hover{
     padding:30px;
 
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.huella {
+  display: block;
+}
+
+
