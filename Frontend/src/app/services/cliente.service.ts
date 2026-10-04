@@ -38,5 +38,11 @@ export class ClienteService {
 
   }
 
+  actualizarCliente(id: number, cliente: Cliente): Observable<any> 
+  { return this.http.put( this.url + "/" + id, cliente ); } 
+  
+  
+  eliminarCliente(id: number): Observable<any> 
+  { return this.http.delete( this.url + "/" + id ); }
 
 }

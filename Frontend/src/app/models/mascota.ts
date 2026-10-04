@@ -5,6 +5,6 @@ export interface Mascota {
  raza: string;   
  sexo: string;
  fecha_nacimiento: string;
- id_cliente: number;
+ id_cliente: Number;
 
 }

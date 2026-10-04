@@ -1,1 +1,75 @@
-<p>recetas works!</p>
+<div class="container">
+
+```
+<!-- FORMULARIO RECETA -->
+<div class="formulario-container">
+
+    <div class="formulario">
+
+        <input
+            type="date"
+            placeholder="Fecha"
+            [(ngModel)]="receta.fecha">
+
+        <input
+            type="text"
+            placeholder="Indicaciones"
+            [(ngModel)]="receta.indicaciones">
+
+        <input
+            type="text"
+            placeholder="Medicamento"
+            [(ngModel)]="receta.medicamento">
+
+        <input
+            type="text"
+            placeholder="Id Historia"
+            [(ngModel)]="receta.id_historia">
+
+        <button (click)="guardarReceta()">
+            Guardar Receta
+        </button>
+
+    </div>
+
+</div>
+
+<!-- IMAGEN VETERINARIA -->
+<div class="contenedor-imagen">
+
+    <img src="/Img.png" alt="Veterinaria">
+
+</div>
+```
+
+</div>
+
+<!-- TABLA RECETAS -->
+
+<div class="tabla">
+
+```
+<table>
+
+    <tr>
+        <th>ID</th>
+        <th>Fecha</th>
+        <th>Indicaciones</th>
+        <th>Medicamento</th>
+        <th>Id Historia</th>
+    </tr>
+
+    <tr *ngFor="let c of recetas">
+
+        <td>{{c.id_receta}}</td>
+        <td>{{c.fecha}}</td>
+        <td>{{c.indicaciones}}</td>
+        <td>{{c.medicamento}}</td>
+        <td>{{c.id_historia}}</td>
+
+    </tr>
+
+</table>
+```
+
+</div>
