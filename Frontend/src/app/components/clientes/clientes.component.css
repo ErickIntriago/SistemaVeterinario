@@ -3,6 +3,7 @@ body {
     background-color: #186b44;
 }
 
+/* Diseño del contenedor */ 
 .container {
 
     display: flex;
@@ -18,7 +19,7 @@ body {
 
 
 
-/* FORMULARIO */
+/* FORMULARIO DE CLIENTESS */ 
 
 .formulario-container {
 
